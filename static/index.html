@@ -26,11 +26,13 @@ var updateTree = function(tree, ruleNames) {
         var child = tree.children[i];
         var nodeType = ruleNames[child.ruleIndex];
         if (nodeType == "element") {
-            var newElement = document.createElement("div");
-            newElement.className = "todoElement";
-            var newElementText = document.createTextNode(child.children[2].getText());
-            newElement.appendChild(newElementText);
-            container.appendChild(newElement);
+			for (var j = 0; j < child.children.length; ++j) {
+	            var newElement = document.createElement("div");
+	            newElement.className = "todoElement";
+	            var newElementText = document.createTextNode(child.children[j].getText());
+	            newElement.appendChild(newElementText);
+	            container.appendChild(newElement);
+			}
         }
     }
 };
