@@ -44,6 +44,8 @@ var updateTree = function(tree, ruleNames) {
 var insertTreeNode = function(parent, child, ruleNames) {
     // var child = tree.children[i];
     var nodeType = ruleNames[child.ruleIndex];
+	if(nodeType === undefined)
+		nodeType = "<" + child.constructor.name + ">";
     // if (nodeType == "element")
             var newElement = document.createElement("div");
             newElement.className = "todoElement";
