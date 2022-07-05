@@ -53,8 +53,9 @@ var insertTreeNode = function(parent, child, ruleNames) {
             // newElement.appendChild(newElementText);
            parent.appendChild(newElement);
 	{
-		for (var j = 0; j < child.children.length; ++j) {
-			insertTreeNode(newElement, child.children[j], ruleNames);
+		if(child.children !== undefined)
+		for (const eachChild of child.children) {
+			insertTreeNode(newElement, eachChild, ruleNames);
 		}
     }
 
