@@ -1,11 +1,14 @@
-apply plugin: 'java'
+plugins {
+	id 'java'
+	id 'antlr'
+}
 
 repositories {
     jcenter()
 }
 
 dependencies {
-    runtimeOnly 'org.antlr:antlr4:4.5.2'
+    antlr 'org.antlr:antlr4:4.9.2'
 }
 
 task generateParser(type:JavaExec) {
